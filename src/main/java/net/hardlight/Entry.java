@@ -1,15 +1,20 @@
 package net.hardlight;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class Entry
 {
+    @SerializedName("delete")
     private final List<String> deletePaths = new ArrayList<>();
 
     private final List<String> dependencies = new ArrayList<>();
 
+    @SerializedName("hashes")
     private final List<HashTriple> hashList = new ArrayList<>();
 
     private final List<InstallFile> installFiles = new ArrayList<>();

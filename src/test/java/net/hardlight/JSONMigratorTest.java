@@ -3,6 +3,7 @@ package net.hardlight;
 import org.junit.Test;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -45,6 +46,10 @@ public class JSONMigratorTest
                             line).openStream())))
                     {
                         migrator.migrate(nodeReader);
+                    }
+                    catch(IOException e)
+                    {
+                        e.printStackTrace();
                     }
                 }
             }

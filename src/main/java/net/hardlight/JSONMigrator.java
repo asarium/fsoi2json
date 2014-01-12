@@ -6,10 +6,6 @@ import com.fsoinstaller.common.InstallerNodeFactory;
 import com.fsoinstaller.common.InstallerNodeParseException;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import net.hardlight.json.EntrySerializer;
-import net.hardlight.json.HashTripleSerializer;
-import net.hardlight.json.InstallFileSerializer;
-import net.hardlight.json.RenamePairSerializer;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -118,10 +114,6 @@ public class JSONMigrator
     public String toJSON()
     {
         GsonBuilder builder = new GsonBuilder();
-        builder.registerTypeAdapter(Entry.class, new EntrySerializer());
-        builder.registerTypeAdapter(HashTriple.class, new HashTripleSerializer());
-        builder.registerTypeAdapter(RenamePair.class, new RenamePairSerializer());
-        builder.registerTypeAdapter(InstallFile.class, new InstallFileSerializer());
         builder.setPrettyPrinting();
 
         Gson gson = builder.create();
