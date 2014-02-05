@@ -18,7 +18,14 @@ public class JSONMigrator
 {
     private static String fixPath(String path)
     {
-        return path.replace('\\', '/');
+        if (path != null)
+        {
+            return path.replace('\\', '/');
+        }
+        else
+        {
+            return null;
+        }
     }
 
     private List<Entry> entries = new ArrayList<>();
